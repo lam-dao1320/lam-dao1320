@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --color-primary: #3B82F6;
+  --color-secondary: #10B981;
+  --color-accent: #F59E0B;
+  --color-muted-bg: #F3F4F6;
+  --color-foreground: #111827;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #ffffff;
+  color: #111827;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+*::-webkit-scrollbar-track { background: #F3F4F6; }
+*::-webkit-scrollbar-thumb { background: #3B82F6; border-radius: 2px; }
+
+/* ── Keyframes ─────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes progress-fill {
+  from { width: 0%; }
+  to   { width: var(--progress-width); }
+}
+@keyframes pulse-dot {
+  0%   { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* ── Buttons ────────────────────────────────────────────── */
+.btn-primary {
+  background: #3B82F6;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-align: center;
+}
+.btn-primary:hover {
+  background: #2563EB;
+  transform: scale(1.05);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #3B82F6;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 6px;
+  border: 4px solid #3B82F6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-align: center;
+}
+.btn-outline:hover {
+  background: #3B82F6;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.btn-white {
+  background: #ffffff;
+  color: #3B82F6;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-align: center;
+}
+.btn-white:hover {
+  background: #F3F4F6;
+  transform: scale(1.05);
+}
+
+.btn-white-outline {
+  background: transparent;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 6px;
+  border: 4px solid #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-align: center;
+}
+.btn-white-outline:hover {
+  background: #ffffff;
+  color: #3B82F6;
+  transform: scale(1.05);
+}
+
+/* ── Tags ───────────────────────────────────────────────── */
+.tag-blue {
+  background: #DBEAFE;
+  color: #1D4ED8;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.tag-emerald {
+  background: #D1FAE5;
+  color: #065F46;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.tag-amber {
+  background: #FEF3C7;
+  color: #92400E;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.tag-ghost {
+  background: #F3F4F6;
+  color: #4B5563;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.tag-dark {
+  background: rgba(255,255,255,0.12);
+  color: #D1D5DB;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ── Progress Bars ──────────────────────────────────────── */
+.progress-bar {
+  height: 6px;
+  background: #E5E7EB;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill-blue {
+  height: 100%;
+  background: #3B82F6;
+  border-radius: 999px;
+  animation: progress-fill 1s ease-out both;
+}
+.progress-fill-emerald {
+  height: 100%;
+  background: #10B981;
+  border-radius: 999px;
+  animation: progress-fill 1s ease-out both;
+}
+
+/* ── Typography helpers ─────────────────────────────────── */
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.section-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #3B82F6;
+}
+.section-label-white {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.7);
+}
+.section-label-emerald {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #10B981;
+}
+
+/* ── Card hover (flat — scale only, no shadow) ──────────── */
+.card-hover {
+  transition: transform 0.2s ease;
+}
+.card-hover:hover {
+  transform: scale(1.02);
+}
+
+/* ── Float animation ─────────────────────────────────────── */
+.float-anim { animation: float 5s ease-in-out infinite; }
