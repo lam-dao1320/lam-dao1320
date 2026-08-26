@@ -1,77 +1,77 @@
-import { useRef, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 // import { useQuery } from "convex/react"
 // import { api } from "../../convex/_generated/api"
-import { useCountUp } from "../hooks/useCountUp"
+// import { useCountUp } from "../hooks/useCountUp"
 import { IoLocationSharp } from "react-icons/io5"
 import { IoIosMail } from "react-icons/io";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { profile } from "../../backend/data/portfolio"
 // import { METRIC_DEFAULTS } from "../hooks/useMetrics"
 
-interface MetricCardProps {
-  label: string
-  liveValue: number
-  icon: string
-  accentColor: string
-  delay: number
-}
+// interface MetricCardProps {
+//   label: string
+//   liveValue: number
+//   icon: string
+//   accentColor: string
+//   delay: number
+// }
 
-function MetricCard({
-  label,
-  liveValue,
-  icon,
-  accentColor,
-  delay,
-}: MetricCardProps) {
-  const initialRef = useRef<number | null>(null)
-  if (liveValue > 0 && initialRef.current === null)
-    initialRef.current = liveValue
+// function MetricCard({
+//   label,
+//   liveValue,
+//   icon,
+//   accentColor,
+//   delay,
+// }: MetricCardProps) {
+//   const initialRef = useRef<number | null>(null)
+//   if (liveValue > 0 && initialRef.current === null)
+//     initialRef.current = liveValue
 
-  const animTarget = initialRef.current ?? 0
-  const count = useCountUp(animTarget, 2000, delay)
-  const animDone = animTarget > 0 && count >= animTarget
-  const displayed = animDone ? liveValue : count
+//   const animTarget = initialRef.current ?? 0
+//   const count = useCountUp(animTarget, 2000, delay)
+//   const animDone = animTarget > 0 && count >= animTarget
+//   const displayed = animDone ? liveValue : count
 
-  return (
-    <div
-      className="card-hover rounded-lg p-5 flex flex-col gap-2 cursor-default"
-      style={{
-        background: "#ffffff",
-        animation: `slide-up 0.6s ease-out ${delay + 500}ms both`,
-      }}
-    >
-      <div className="flex items-center justify-between">
-        <span className="text-xl">{icon}</span>
-        <span
-          className="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded"
-          style={{
-            background: accentColor + "18",
-            color: accentColor,
-            fontFamily: "'Outfit', sans-serif",
-          }}
-        >
-          LIVE
-        </span>
-      </div>
-      <div
-        className="text-3xl font-black tabular-nums"
-        style={{
-          color: accentColor,
-          fontFamily: "'Outfit', sans-serif",
-          letterSpacing: "-0.02em",
-        }}
-      >
-        {displayed.toLocaleString()}
-      </div>
-      <div
-        className="text-sm font-medium"
-        style={{ color: "#6B7280", fontFamily: "'Outfit', sans-serif" }}
-      >
-        {label}
-      </div>
-    </div>
-  )
-}
+//   return (
+//     <div
+//       className="card-hover rounded-lg p-5 flex flex-col gap-2 cursor-default"
+//       style={{
+//         background: "#ffffff",
+//         animation: `slide-up 0.6s ease-out ${delay + 500}ms both`,
+//       }}
+//     >
+//       <div className="flex items-center justify-between">
+//         <span className="text-xl">{icon}</span>
+//         <span
+//           className="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded"
+//           style={{
+//             background: accentColor + "18",
+//             color: accentColor,
+//             fontFamily: "'Outfit', sans-serif",
+//           }}
+//         >
+//           LIVE
+//         </span>
+//       </div>
+//       <div
+//         className="text-3xl font-black tabular-nums"
+//         style={{
+//           color: accentColor,
+//           fontFamily: "'Outfit', sans-serif",
+//           letterSpacing: "-0.02em",
+//         }}
+//       >
+//         {displayed.toLocaleString()}
+//       </div>
+//       <div
+//         className="text-sm font-medium"
+//         style={{ color: "#6B7280", fontFamily: "'Outfit', sans-serif" }}
+//       >
+//         {label}
+//       </div>
+//     </div>
+//   )
+// }
 
 const TITLE_TEXTS = ["Full-Stack Developer", "Data Analyst", "Business Analyst", "AI/ML Engineer"]
 

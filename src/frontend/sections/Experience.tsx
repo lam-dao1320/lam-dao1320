@@ -30,7 +30,7 @@ export default function Experience() {
             {experience.map((exp, i) => {
               const isBlue = exp.color === "blue"
               const accent = isBlue ? "#3B82F6" : "#10B981"
-              const accentBg = isBlue ? "#1E3A5F" : "#064E3B"
+              // const accentBg = isBlue ? "#1E3A5F" : "#064E3B"
 
               return (
                 <div

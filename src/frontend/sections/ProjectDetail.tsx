@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router";
 import { useEffect } from "react";
-import { SiGithub } from 'react-icons/si';
+// import { SiGithub } from 'react-icons/si';
 import AutoImageSlider from "../components/AutoImageSlider";
 import { projects } from "../../backend/data/portfolio"
 

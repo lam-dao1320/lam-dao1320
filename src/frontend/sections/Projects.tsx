@@ -1,8 +1,8 @@
-import { useState } from "react"
+// import { useState } from "react"
 import { useNavigate } from "react-router"
 import { projects } from "../../backend/data/portfolio"
 
-const CATEGORIES = ["All", "ML / MLOps", "Full-Stack", "AI / RAG", "ML / Data"]
+// const CATEGORIES = ["All", "ML / MLOps", "Full-Stack", "AI / RAG", "ML / Data"]
 
 const CATEGORY_CARD_BG: Record<string, string> = {
   "ML / MLOps":  "#EFF6FF",
@@ -20,7 +20,8 @@ const STATUS_STYLE: Record<string, { bg: string; color: string }> = {
 
 export default function Projects() {
   const navigate = useNavigate();
-  const [activeCategory, setActiveCategory] = useState("All")
+  // const [activeCategory, setActiveCategory] = useState("All")
+  const activeCategory = "All" // Temporarily hardcoded to "All" for now
 
   const filtered = activeCategory === "All"
     ? projects
