@@ -87,7 +87,7 @@ export function MainLayout() {
             ))}
           </div>
           <a
-            href="/LamDao_Resume.pdf"
+            href="/lam-dao1320/info/LamDao_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary text-sm"
