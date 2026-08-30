@@ -92,7 +92,7 @@ export default function Navbar({
         {/* Actions */}
         <div className="flex items-center gap-3">
           <a
-            href="/lam-dao1320/LamDao_Resume.pdf"
+            href="/lam-dao1320/info/LamDao_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary hidden md:block"
